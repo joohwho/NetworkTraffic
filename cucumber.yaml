@@ -1,0 +1,13 @@
+---
+# default: -p local
+default: -p custom
+local: -p pretty -p chrome -p html -p json
+custom: -p pretty -p poltergeist -p html -p json
+ci: -p pretty -p headless -p json_report
+chrome: BROWSER=chrome
+poltergeist: BROWSER=poltergeist
+headless: BROWSER=headless
+# cucumber: CUCUMBER_PUBLISH_ENABLED=true --publish
+pretty: --format pretty
+html: --color --format html --out=reports/features.html
+json: --format json -o "reports/report.json"
